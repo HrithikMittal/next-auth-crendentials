@@ -104,6 +104,16 @@ const Nav = () => {
                 >
                   Create Prompt
                 </Link>
+                <button
+                  type="button"
+                  className="mt-5 w-full black_btn"
+                  onClick={() => {
+                    setToggleDropdown(false);
+                    signOut();
+                  }}
+                >
+                  Sign Out
+                </button>
               </div>
             )}
           </div>
