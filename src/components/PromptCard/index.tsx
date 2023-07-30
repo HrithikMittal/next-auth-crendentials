@@ -38,7 +38,7 @@ const PromptCard = ({
             </h3>
             <p className="font-inter text-sm text-gray-500">{creator?.email}</p>
           </div>
-          <div className="copy_btn" onClick={handleCopy}>
+          <div className="copy_btn flex-1" onClick={handleCopy}>
             <Image
               src={
                 copy === prompt

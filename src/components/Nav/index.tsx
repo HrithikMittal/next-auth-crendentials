@@ -19,6 +19,20 @@ const Nav = () => {
     setProvidersData();
   }, []);
 
+  const handleSignIn = async (id: string) => {
+    if (id === "google") {
+      signIn("google");
+    } else {
+      const res = await signIn("credentials", {
+        email: "harbhajan@attentive.ai",
+        password: "Password!123",
+        redirect: false,
+      });
+
+      console.log(res);
+    }
+  };
+
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
@@ -62,10 +76,10 @@ const Nav = () => {
                 <button
                   type="button"
                   className="black_btn"
-                  onClick={() => signIn(provider.id)}
+                  onClick={() => handleSignIn(provider.id)}
                   key={provider.name}
                 >
-                  Sign In
+                  {provider.name} Sign In
                 </button>
               ))}
           </>
